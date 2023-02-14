@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows10.0.22000.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
+    <UseWindowsForms>True</UseWindowsForms>
+    <SupportedOSPlatformVersion>7.0</SupportedOSPlatformVersion>
+    <ApplicationIcon>bin\Release\net6.0-windows10.0.22000.0\Keyboard.ico</ApplicationIcon>
+    <AssemblyName>tn-keyboard</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="BackSpace.png" />
+    <None Remove="BackSpace2.png" />
+    <None Remove="Enter.png" />
+    <None Remove="HideKeyboard.png" />
+    <None Remove="Shift.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <COMReference Include="UIAutomationClient">
+      <WrapperTool>tlbimp</WrapperTool>
+      <VersionMinor>0</VersionMinor>
+      <VersionMajor>1</VersionMajor>
+      <Guid>944de083-8fb8-45cf-bcb7-c477acb2f897</Guid>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="bin\Release\net6.0-windows10.0.22000.0\Keyboard.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignColors" Version="2.0.6" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="RawInput.Sharp">
+      <HintPath>..\..\..\TouchKeyboard\TouchDetector\TouchDetector\bin\Release\net6.0-windows10.0.22000.0\RawInput.Sharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="BackSpace2.png" />
+    <Resource Include="Enter.png" />
+    <Resource Include="HideKeyboard.png" />
+    <Resource Include="Shift.png" />
+  </ItemGroup>
+
+</Project>

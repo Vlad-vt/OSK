@@ -1,0 +1,96 @@
+﻿<Window x:Class="osk.NumberKeyboardWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:osk"
+        mc:Ignorable="d"
+        Title="osk" Height="358" Width="425"
+        Topmost="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent" 
+        AllowsTransparency="true" Stylus.IsPressAndHoldEnabled="True">
+    <Grid>
+        <Border x:Name="NumberKeyboard" Background="#FF636262" BorderThickness="1" BorderBrush="#4C949494" CornerRadius="10" Height="358" Width="425" Visibility="Visible">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="75"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9"/>
+                    <ColumnDefinition Width="27"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="138"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding Press1}" Background="{Binding PressQBGColor}" BorderBrush="{Binding PressQBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock x:Name="Text1" Text="1" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press2}" Background="{Binding PressWBGColor}" BorderBrush="{Binding PressWBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text2" Text="2" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press3}" Background="{Binding PressEBGColor}" BorderBrush="{Binding PressEBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text3" Text="3" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressBackSpace}" Background="{Binding PressBackSpaceBGColor}" BorderBrush="{Binding PressBackSpaceBBColor}" Style="{StaticResource RoundCorner}" Width="110" Height="75" Margin="14,0,0,0">
+                        <Image Source="/BackSpace2.png" Height="55" Width="55"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding Press4}" Background="{Binding PressRBGColor}" BorderBrush="{Binding PressRBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock x:Name="Text4" Text="4" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press5}" Background="{Binding PressTBBColor}" BorderBrush="{Binding PressTBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text5" Text="5" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press6}" Background="{Binding PressYBGColor}" BorderBrush="{Binding PressYBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text6" Text="6" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding Press7}" Background="{Binding PressUBGColor}" BorderBrush="{Binding PressUBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock x:Name="Text7" Text="7" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press8}" Background="{Binding PressIBGColor}" BorderBrush="{Binding PressIBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text8" Text="8" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press9}" Background="{Binding PressOBGColor}" BorderBrush="{Binding PressOBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text9" Text="9" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="1" Orientation="Horizontal">
+                    <Button Command="{Binding Press0}" Background="{Binding PressPBGColor}" BorderBrush="{Binding PressPBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock x:Name="Text0" Text="0" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressPoint}" Background="{Binding PressPointBGColor}" BorderBrush="{Binding PressPointBBColor}" Style="{StaticResource RoundCorner}" Width="180" Height="75" Margin="18,0,0,0">
+                        <TextBlock x:Name="Text81" Text="." Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <Button Command="{Binding PressEnter}" Background="{Binding PressEnterBGColor}" BorderBrush="{Binding PressEnterBBColor}" Grid.Row="3" Grid.RowSpan="5" Grid.Column="5" Style="{StaticResource RoundCorner}" Width="110">
+                    <Image Source="/Enter.png" Height="65" Width="65"/>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,366 @@
+﻿<Window x:Class="osk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="osk" Height="370" Width="1080"
+        Topmost="True"
+        ResizeMode="NoResize"
+        WindowStyle="None"
+        Background="Transparent" 
+        AllowsTransparency="true" WindowStartupLocation="Manual" Stylus.IsPressAndHoldEnabled="False">
+    <Grid>
+        <Border x:Name="TextKeyboard" Background="#FF636262" BorderThickness="1" BorderBrush="#4C949494" CornerRadius="10" Visibility="{Binding TextKeyboardVisibility}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9"/>
+                    <ColumnDefinition Width="27"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding PressShift}" Style="{StaticResource ShiftButton}" Background="{Binding ShiftColorBackground}" BorderBrush="{Binding ShiftColorBorderBrush}" Width="80" Height="75">
+                        <Image Source="/Shift.png" Height="55" Width="55"/>
+                    </Button>
+                    <Button Command="{Binding PressZ}" Background="{Binding PressZBGColor}" BorderBrush="{Binding PressZBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextZ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressX}" Background="{Binding PressXBGColor}" BorderBrush="{Binding PressXBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextX}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressC}" Background="{Binding PressCBGColor}" BorderBrush="{Binding PressCBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextC}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressV}" Background="{Binding PressVBGColor}" BorderBrush="{Binding PressVBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextV}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressB}" Background="{Binding PressBBGColor}" BorderBrush="{Binding PressBBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextB}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressN}" Background="{Binding PressNBGColor}" BorderBrush="{Binding PressNBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextN}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressM}" Background="{Binding PressMBGColor}" BorderBrush="{Binding PressMBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextM}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressÄ}" Background="{Binding PressÄBGColor}" BorderBrush="{Binding PressÄBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextÄ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressÜ}" Background="{Binding PressÜBGColor}" BorderBrush="{Binding PressÜBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextÜ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressÖ}" Style="{StaticResource RoundCorner}" Background="{Binding PressÖBGColor}" BorderBrush="{Binding PressÖBBColor}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextÖ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding PressA}" Background="{Binding PressABGColor}" BorderBrush="{Binding PressABBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="{Binding TextA}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressS}" Background="{Binding PressSBGColor}" BorderBrush="{Binding PressSBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextS}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressD}" Background="{Binding PressDBGColor}" BorderBrush="{Binding PressDBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextD}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressF}" Background="{Binding PressFBGColor}" BorderBrush="{Binding PressFBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextF}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressG}" Background="{Binding PressGBBColor}" BorderBrush="{Binding PressGBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextG}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressH}" Background="{Binding PressHBGColor}" BorderBrush="{Binding PressHBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextH}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressJ}" Background="{Binding PressJBGColor}" BorderBrush="{Binding PressJBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextJ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressK}" Background="{Binding PressKBGColor}" BorderBrush="{Binding PressKBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextK}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressL}" Background="{Binding PressLBGColor}" BorderBrush="{Binding PressLBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextL}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Pressß}" Background="{Binding PressßBGColor}" BorderBrush="{Binding PressßBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding Textß}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressEnter}" Background="{Binding PressEnterBGColor}" BorderBrush="{Binding PressEnterBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <Image Source="/Enter.png" Height="55" Width="55"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding PressQ}" Background="{Binding PressQBGColor}" BorderBrush="{Binding PressQBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="{Binding TextQ}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressW}" Background="{Binding PressWBGColor}" BorderBrush="{Binding PressWBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextW}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressE}" Background="{Binding PressEBGColor}" BorderBrush="{Binding PressEBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextE}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressR}" Background="{Binding PressRBGColor}" BorderBrush="{Binding PressRBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextR}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressT}" Background="{Binding PressTBBColor}" BorderBrush="{Binding PressTBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextT}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressY}" Background="{Binding PressYBGColor}" BorderBrush="{Binding PressYBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextY}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressU}" Background="{Binding PressUBGColor}" BorderBrush="{Binding PressUBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextU}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressI}" Background="{Binding PressIBGColor}" BorderBrush="{Binding PressIBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextI}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressO}" Background="{Binding PressOBGColor}" BorderBrush="{Binding PressOBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextO}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressP}" Background="{Binding PressPBGColor}" BorderBrush="{Binding PressPBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding TextP}" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressBackSpace}" Background="{Binding PressBackSpaceBGColor}" BorderBrush="{Binding PressBackSpaceBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <Image Source="/BackSpace2.png" Height="55" Width="55"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Orientation="Horizontal">
+                    <Button Command="{Binding PressChangeKeyboardType}" Background="{Binding PressChangeKeyboardBGColor}" BorderBrush="{Binding PressChangeKeyboardBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="{Binding KeyboardType}" Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressSpace}" Background="{Binding PressSpaceBGColor}" BorderBrush="{Binding PressSpaceBBColor}" Style="{StaticResource RoundCorner}" Width="667" Height="75" Margin="18,0,0,0">
+                        <TextBlock Foreground="White" FontFamily="Consolas" FontSize="28">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressPoint}" Background="{Binding PressPointBGColor}" BorderBrush="{Binding PressPointBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="." Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressDog}" Background="{Binding PressDOGColor}" BorderBrush="{Binding PressDOGColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="@" Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding HideKeyboard}" Background="{Binding PressHideBGColor}" BorderBrush="{Binding PressHideBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <Image Source="/HideKeyboard.png" Height="55" Width="55"/>
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+        <Border x:Name="TextNumberKeyboard" Background="#FF636262" BorderThickness="1" BorderBrush="#4C949494" CornerRadius="10" Visibility="{Binding TextNumberKeyboardVisibility}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="7"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="9"/>
+                    <ColumnDefinition Width="27"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="177"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding PressAmpersant}" Background="{Binding PressZBGColor}" BorderBrush="{Binding PressZBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="&amp;" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressLeftScope}" Background="{Binding PressXBGColor}" BorderBrush="{Binding PressXBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="(" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressRightScope}" Background="{Binding PressCBGColor}" BorderBrush="{Binding PressCBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text=")" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressDoublePoint}" Background="{Binding PressBBGColor}" BorderBrush="{Binding PressBBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text=":" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressPointComma}" Background="{Binding PressVBGColor}" BorderBrush="{Binding PressVBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text=";" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressOneQuotationMark}" Background="{Binding PressNBGColor}" BorderBrush="{Binding PressNBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="'" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressTwoQuotationMark}" Background="{Binding PressMBGColor}" BorderBrush="{Binding PressMBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="''" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressExclamationPoint}" Background="{Binding PressCommaBGColor}" BorderBrush="{Binding PressCommaBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="!" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressQuestion}" Background="{Binding PressDownPointBGColor}" BorderBrush="{Binding PressDownPointBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="?" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding PressDog}" Background="{Binding PressABGColor}" BorderBrush="{Binding PressABBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="@" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressSharp}" Background="{Binding PressSBGColor}" BorderBrush="{Binding PressSBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="#" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressDollar}" Background="{Binding PressDBGColor}" BorderBrush="{Binding PressDBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="$" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressDownLine}" Background="{Binding PressFBGColor}" BorderBrush="{Binding PressFBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="_" Foreground="Black" FontFamily="Consolas" FontSize="36">
+
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressMinus}" Background="{Binding PressGBBColor}" BorderBrush="{Binding PressGBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="-" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressPlus}" Background="{Binding PressHBGColor}" BorderBrush="{Binding PressHBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="+" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressMultiply}" Background="{Binding PressJBGColor}" BorderBrush="{Binding PressJBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="*" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressDivide}" Background="{Binding PressKBGColor}" BorderBrush="{Binding PressKBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="/" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressEqual}" Background="{Binding PressLBGColor}" BorderBrush="{Binding PressLBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="=" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
+                    <Button Command="{Binding Press1}" Background="{Binding PressQBGColor}" BorderBrush="{Binding PressQBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="1" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press2}" Background="{Binding PressWBGColor}" BorderBrush="{Binding PressWBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="2" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press3}" Background="{Binding PressEBGColor}" BorderBrush="{Binding PressEBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="3" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press4}" Background="{Binding PressRBGColor}" BorderBrush="{Binding PressRBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="4" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press5}" Background="{Binding PressTBBColor}" BorderBrush="{Binding PressTBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="5" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press6}" Background="{Binding PressYBGColor}" BorderBrush="{Binding PressYBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="6" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press7}" Background="{Binding PressUBGColor}" BorderBrush="{Binding PressUBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="7" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press8}" Background="{Binding PressIBGColor}" BorderBrush="{Binding PressIBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="8" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press9}" Background="{Binding PressOBGColor}" BorderBrush="{Binding PressOBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="9" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding Press0}" Background="{Binding PressPBGColor}" BorderBrush="{Binding PressPBBColor}"  Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="0" Foreground="Black" FontFamily="Consolas" FontSize="36">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressBackSpace}" Background="{Binding PressBackSpaceBGColor}" BorderBrush="{Binding PressBackSpaceBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <Image Source="/BackSpace2.png" Width="55" Height="55"/>
+                    </Button>
+                </StackPanel>
+                <StackPanel Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="5" Orientation="Horizontal">
+                    <Button Command="{Binding PressChangeKeyboardType}" Background="{Binding PressChangeKeyboardBGColor}" BorderBrush="{Binding PressChangeKeyboardBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75">
+                        <TextBlock Text="{Binding KeyboardType}" Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressSpace}" Background="{Binding PressSpaceBGColor}" BorderBrush="{Binding PressSpaceBBColor}" Style="{StaticResource RoundCorner}" Width="637" Height="75" Margin="18,0,0,0">
+                        <TextBlock Foreground="White" FontFamily="Consolas" FontSize="28">
+                            <TextBlock.Effect>
+                                <DropShadowEffect ShadowDepth="4" Direction="330" Color="Black" Opacity="0.5" BlurRadius="4"/>
+                            </TextBlock.Effect>
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressPoint}" Background="{Binding PressPointBGColor}" BorderBrush="{Binding PressPointBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="." Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding PressChangeKeyboardType}" Background="{Binding PressChangeKeyboardBGColor}" BorderBrush="{Binding PressChangeKeyboardBBColor}" Style="{StaticResource RoundCorner}" Width="110" Height="75" Margin="18,0,0,0">
+                        <TextBlock Text="{Binding KeyboardType}" Foreground="Black" FontFamily="Consolas" FontSize="30" FontWeight="Bold">
+                        </TextBlock>
+                    </Button>
+                    <Button Command="{Binding HideKeyboard}" Background="{Binding PressHideBGColor}" BorderBrush="{Binding PressHideBBColor}" Style="{StaticResource RoundCorner}" Width="80" Height="75" Margin="18,0,0,0">
+                        <Image Source="/HideKeyboard.png" Height="55" Width="55"/>
+                    </Button>
+                </StackPanel>
+                <Button Grid.Row="3" Grid.RowSpan="3" Grid.Column="3" Command="{Binding PressEnter}" Background="{Binding PressEnterBGColor}" BorderBrush="{Binding PressEnterBBColor}" Style="{StaticResource RoundCorner}">
+                    <Image Source="/Enter.png" Width="85" Height="85"/>
+                </Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
